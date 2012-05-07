@@ -1,7 +1,7 @@
 #!/bin/sh
 clear &&
 rm -f nyelv.output nyelv.tab.c nyelv.tab.h nyelv.tab.o lex.yy.c nyelv &&
-bison -dvt nyelv.y &&
+bison -dv nyelv.y &&
 flex nyelv.lex &&
 gcc -c nyelv.tab.c &&
 gcc -c lex.yy.c -lfl &&

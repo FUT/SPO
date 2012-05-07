@@ -47,23 +47,22 @@
 %%
 
 primary_expression
-	: IDENTIFIER 		
-	| CONSTANT_INT		
-	| CONSTANT_FRAC		
-	| STRING_LITERAL	
-	| '(' expression ')'	
+	: IDENTIFIER 		{ $$ = $1; }		
+	| CONSTANT_INT		{ $$ = $1; }
+	| CONSTANT_FRAC		{ $$ = $1; }
+	| STRING_LITERAL	{ $$ = $1; }
+	| '(' expression ')'	{ $$ = $2; }
 	;
 
 postfix_expression
-	: primary_expression					
-	| postfix_expression '[' expression ']'			
-	| postfix_expression '(' ')'				
-	| postfix_expression '(' argument_expression_list ')'
-	| postfix_expression '.' IDENTIFIER
-	| postfix_expression INCREMENT
-	| postfix_expression DECREMENT
-	| '(' type_name ')' '{' initializer_list '}'
-	| '(' type_name ')' '{' initializer_list ',' '}'
+	: primary_expression					{ $$ = buildNode(POSTFIX_EXPRESSION, "id1", "", $1, NULL, $$); }			
+	| postfix_expression '[' expression ']'			{ $$ = buildNode(POSTFIX_EXPRESSION, "id1[exp1]", "", $1, $3, $$); }			
+	| postfix_expression '(' ')'				{ $$ = buildNode(POSTFIX_EXPRESSION, "id1()", "", $1, NULL, $$); }
+	| postfix_expression '(' argument_expression_list ')'	{ $$ = buildNode(POSTFIX_EXPRESSION, "id1(par1, par2)", "", $1, $3, $$); }
+	| postfix_expression '.' IDENTIFIER			{ $$ = buildNode(POSTFIX_EXPRESSION, "id1.attr1", "", $1, $3, $$); }
+	| postfix_expression INCREMENT				{ $$ = buildNode(POSTFIX_EXPRESSION, "id1++", "INCREMENT", $1, NULL, $$); }
+	| postfix_expression DECREMENT				{ $$ = buildNode(POSTFIX_EXPRESSION, "id1--", "DECREMENT", $1, NULL, $$); }
+	| '(' type_name ')' '{' initializer_list '}'		{ $$ = buildNode(POSTFIX_EXPRESSION, "(int){}", $2, NULL, $5, $$); }
 	;
 
 argument_expression_list
@@ -385,7 +384,7 @@ int yyerror(char const *s)
 
 main(int argc, char *argv[])
 {
-  yydebug=1;
+  //yydebug=1;
   ++argv, ++argc;
   yyin = fopen(argv[0], "r");
   yyparse(); 

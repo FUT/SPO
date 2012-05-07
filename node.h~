@@ -11,6 +11,7 @@ typedef struct
 	char* type;	 
 	char* name;	
 
+	struct a_node* parent;
 	struct a_node* left;
 	struct a_node* right;
 	struct a_node* a;
