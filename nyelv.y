@@ -62,7 +62,7 @@ postfix_expression
 	| postfix_expression '.' IDENTIFIER			{ $$ = buildNode(POSTFIX_EXPRESSION, "id1.attr1", "", $1, $3, $$); }
 	| postfix_expression INCREMENT				{ $$ = buildNode(POSTFIX_EXPRESSION, "id1++", "INCREMENT", $1, NULL, $$); }
 	| postfix_expression DECREMENT				{ $$ = buildNode(POSTFIX_EXPRESSION, "id1--", "DECREMENT", $1, NULL, $$); }
-	| '(' type_name ')' '{' initializer_list '}'		{ $$ = buildNode(POSTFIX_EXPRESSION, "(int){}", $2, NULL, $5, $$); }
+	| '(' type_name ')' '{' initializer_list '}'		
 	;
 
 argument_expression_list
