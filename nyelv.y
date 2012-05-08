@@ -47,325 +47,325 @@
 %%
 
 primary_expression
-	: IDENTIFIER 		{ $$ = $1; }		
-	| CONSTANT_INT		{ $$ = $1; }
-	| CONSTANT_FRAC		{ $$ = $1; }
-	| STRING_LITERAL	{ $$ = $1; }
-	| '(' expression ')'	{ $$ = $2; }
+	: IDENTIFIER 									{ $$ = buildNode(PRIMARY_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| CONSTANT_INT									{ $$ = buildNode(PRIMARY_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| CONSTANT_FRAC									{ $$ = buildNode(PRIMARY_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| STRING_LITERAL								{ $$ = buildNode(PRIMARY_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| '(' expression ')'								{ $$ = buildNode(PRIMARY_EXPRESSION, "id1", "", NULL, NULL, $$); }
 	;
 
 postfix_expression
-	: primary_expression					{ $$ = buildNode(POSTFIX_EXPRESSION, "id1", "", $1, NULL, $$); }			
-	| postfix_expression '[' expression ']'			{ $$ = buildNode(POSTFIX_EXPRESSION, "id1[exp1]", "", $1, $3, $$); }			
-	| postfix_expression '(' ')'				{ $$ = buildNode(POSTFIX_EXPRESSION, "id1()", "", $1, NULL, $$); }
-	| postfix_expression '(' argument_expression_list ')'	{ $$ = buildNode(POSTFIX_EXPRESSION, "id1(par1, par2)", "", $1, $3, $$); }
-	| postfix_expression '.' IDENTIFIER			{ $$ = buildNode(POSTFIX_EXPRESSION, "id1.attr1", "", $1, $3, $$); }
-	| postfix_expression INCREMENT				{ $$ = buildNode(POSTFIX_EXPRESSION, "id1++", "INCREMENT", $1, NULL, $$); }
-	| postfix_expression DECREMENT				{ $$ = buildNode(POSTFIX_EXPRESSION, "id1--", "DECREMENT", $1, NULL, $$); }
-	| '(' type_name ')' '{' initializer_list '}'		
+	: primary_expression								{ $$ = buildNode(POSTFIX_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| postfix_expression '[' expression ']'						{ $$ = buildNode(POSTFIX_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| postfix_expression '(' ')'							{ $$ = buildNode(POSTFIX_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| postfix_expression '(' argument_expression_list ')'				{ $$ = buildNode(POSTFIX_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| postfix_expression '.' IDENTIFIER						{ $$ = buildNode(POSTFIX_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| postfix_expression INCREMENT							{ $$ = buildNode(POSTFIX_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| postfix_expression DECREMENT							{ $$ = buildNode(POSTFIX_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| '(' type_name ')' '{' initializer_list '}'					{ $$ = buildNode(POSTFIX_EXPRESSION, "id1", "", NULL, NULL, $$); }
 	;
 
 argument_expression_list
-	: assignment_expression
-	| argument_expression_list ',' assignment_expression
+	: assignment_expression								{ $$ = buildNode(ARGUMENT_EXPRESSION_LIST, "id1", "", NULL, NULL, $$); }
+	| argument_expression_list ',' assignment_expression				{ $$ = buildNode(ARGUMENT_EXPRESSION_LIST, "id1", "", NULL, NULL, $$); }
 	;
 
 unary_expression
-	: postfix_expression
-	| INCREMENT unary_expression
-	| DECREMENT unary_expression
-	| unary_operator cast_expression
-	| SIZEOF unary_expression
-	| SIZEOF '(' type_name ')'
+	: postfix_expression								{ $$ = buildNode(UNARY_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| INCREMENT unary_expression							{ $$ = buildNode(UNARY_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| DECREMENT unary_expression							{ $$ = buildNode(UNARY_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| unary_operator cast_expression						{ $$ = buildNode(UNARY_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| SIZEOF unary_expression							{ $$ = buildNode(UNARY_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| SIZEOF '(' type_name ')'							{ $$ = buildNode(UNARY_EXPRESSION, "id1", "", NULL, NULL, $$); }
 	;
 
 unary_operator
-	: '&'
-	| '*'
-	| '+'
-	| '-'
-	| '~'
-	| '!'
+	: '&'										{ $$ = buildNode(UNARY_OPERATOR, "id1", "", NULL, NULL, $$); }
+	| '*'										{ $$ = buildNode(UNARY_OPERATOR, "id1", "", NULL, NULL, $$); }
+	| '+'										{ $$ = buildNode(UNARY_OPERATOR, "id1", "", NULL, NULL, $$); }
+	| '-'										{ $$ = buildNode(UNARY_OPERATOR, "id1", "", NULL, NULL, $$); }
+	| '~'										{ $$ = buildNode(UNARY_OPERATOR, "id1", "", NULL, NULL, $$); }
+	| '!'										{ $$ = buildNode(UNARY_OPERATOR, "id1", "", NULL, NULL, $$); }
 	;
 
 cast_expression
-	: unary_expression
-	| '(' type_name ')' cast_expression
+	: unary_expression								{ $$ = buildNode(CAST_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| '(' type_name ')' cast_expression						{ $$ = buildNode(CAST_EXPRESSION, "id1", "", NULL, NULL, $$); }
 	;
 
 multiplicative_expression
-	: cast_expression
-	| multiplicative_expression '*' cast_expression
-	| multiplicative_expression '/' cast_expression
-	| multiplicative_expression '%' cast_expression
+	: cast_expression								{ $$ = buildNode(MULTIPLICATIVE_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| multiplicative_expression '*' cast_expression					{ $$ = buildNode(MULTIPLICATIVE_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| multiplicative_expression '/' cast_expression					{ $$ = buildNode(MULTIPLICATIVE_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| multiplicative_expression '%' cast_expression					{ $$ = buildNode(MULTIPLICATIVE_EXPRESSION, "id1", "", NULL, NULL, $$); }
 	;
 
 additive_expression
-	: multiplicative_expression
-	| additive_expression '+' multiplicative_expression
-	| additive_expression '-' multiplicative_expression
+	: multiplicative_expression							{ $$ = buildNode(ADDITIVE_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| additive_expression '+' multiplicative_expression				{ $$ = buildNode(ADDITIVE_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| additive_expression '-' multiplicative_expression				{ $$ = buildNode(ADDITIVE_EXPRESSION, "id1", "", NULL, NULL, $$); }
 	;
 
 shift_expression
-	: additive_expression
-	| shift_expression SHIFT_LEFT additive_expression
-	| shift_expression SHIFT_RIGHT additive_expression
+	: additive_expression								{ $$ = buildNode(SHIFT_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| shift_expression SHIFT_LEFT additive_expression				{ $$ = buildNode(SHIFT_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| shift_expression SHIFT_RIGHT additive_expression				{ $$ = buildNode(SHIFT_EXPRESSION, "id1", "", NULL, NULL, $$); }
 	;
 
 relational_expression
-	: shift_expression
-	| relational_expression '<' shift_expression
-	| relational_expression '>' shift_expression
-	| relational_expression LESS_OR_EQUAL shift_expression
-	| relational_expression GREATER_OR_EQUAL shift_expression
+	: shift_expression								{ $$ = buildNode(RELATIONAL_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| relational_expression '<' shift_expression					{ $$ = buildNode(RELATIONAL_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| relational_expression '>' shift_expression					{ $$ = buildNode(RELATIONAL_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| relational_expression LESS_OR_EQUAL shift_expression				{ $$ = buildNode(RELATIONAL_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| relational_expression GREATER_OR_EQUAL shift_expression			{ $$ = buildNode(RELATIONAL_EXPRESSION, "id1", "", NULL, NULL, $$); }
 	;
 
 equality_expression
-	: relational_expression
-	| equality_expression EQUAL relational_expression
-	| equality_expression NOT_EQUAL relational_expression
+	: relational_expression								{ $$ = buildNode(EQUALITY_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| equality_expression EQUAL relational_expression				{ $$ = buildNode(EQUALITY_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| equality_expression NOT_EQUAL relational_expression				{ $$ = buildNode(EQUALITY_EXPRESSION, "id1", "", NULL, NULL, $$); }
 	;
 
 and_expression
-	: equality_expression
-	| and_expression '&' equality_expression
+	: equality_expression								{ $$ = buildNode(AND_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| and_expression '&' equality_expression					{ $$ = buildNode(AND_EXPRESSION, "id1", "", NULL, NULL, $$); }
 	;
 
 exclusive_or_expression
-	: and_expression
-	| exclusive_or_expression '^' and_expression
+	: and_expression								{ $$ = buildNode(EXCLUSIVE_OR_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| exclusive_or_expression '^' and_expression					{ $$ = buildNode(EXCLUSIVE_OR_EXPRESSION, "id1", "", NULL, NULL, $$); }
 	;
 
 inclusive_or_expression
-	: exclusive_or_expression
-	| inclusive_or_expression '|' exclusive_or_expression
+	: exclusive_or_expression							{ $$ = buildNode(INCLUSIVE_OR_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| inclusive_or_expression '|' exclusive_or_expression				{ $$ = buildNode(INCLUSIVE_OR_EXPRESSION, "id1", "", NULL, NULL, $$); }
 	;
 
 logical_and_expression
-	: inclusive_or_expression
-	| logical_and_expression AND inclusive_or_expression
+	: inclusive_or_expression							{ $$ = buildNode(LOGICAL_AND_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| logical_and_expression AND inclusive_or_expression				{ $$ = buildNode(LOGICAL_AND_EXPRESSION, "id1", "", NULL, NULL, $$); }
 	;
 
 logical_or_expression
-	: logical_and_expression
-	| logical_or_expression OR logical_and_expression
+	: logical_and_expression							{ $$ = buildNode(LOGICAL_OR_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| logical_or_expression OR logical_and_expression				{ $$ = buildNode(LOGICAL_OR_EXPRESSION, "id1", "", NULL, NULL, $$); }
 	;
 
 conditional_expression
-	: logical_or_expression
-	| logical_or_expression '?' expression ':' conditional_expression
+	: logical_or_expression								{ $$ = buildNode(CONDITIONAL_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| logical_or_expression '?' expression ':' conditional_expression		{ $$ = buildNode(CONDITIONAL_EXPRESSION, "id1", "", NULL, NULL, $$); }
 	;
 
 assignment_expression
-	: conditional_expression
-	| unary_expression assignment_operator assignment_expression
+	: conditional_expression							{ $$ = buildNode(ASSIGNMENT_EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| unary_expression assignment_operator assignment_expression			{ $$ = buildNode(ASSIGNMENT_EXPRESSION, "id1", "", NULL, NULL, $$); }
 	;
 
 assignment_operator
-	: '='
-	| MUL_ASSIGN
-	| DIV_ASSIGN
-	| MOD_ASSIGN
-	| ADD_ASSIGN
-	| SUB_ASSIGN
-	| LEFT_ASSIGN
-	| RIGHT_ASSIGN
-	| AND_ASSIGN
-	| XOR_ASSIGN
-	| OR_ASSIGN
+	: '='										{ $$ = buildNode(ASSIGNMENT_OPERATOR, "id1", "", NULL, NULL, $$); }
+	| MUL_ASSIGN									{ $$ = buildNode(ASSIGNMENT_OPERATOR, "id1", "", NULL, NULL, $$); }
+	| DIV_ASSIGN									{ $$ = buildNode(ASSIGNMENT_OPERATOR, "id1", "", NULL, NULL, $$); }
+	| MOD_ASSIGN									{ $$ = buildNode(ASSIGNMENT_OPERATOR, "id1", "", NULL, NULL, $$); }
+	| ADD_ASSIGN									{ $$ = buildNode(ASSIGNMENT_OPERATOR, "id1", "", NULL, NULL, $$); }
+	| SUB_ASSIGN									{ $$ = buildNode(ASSIGNMENT_OPERATOR, "id1", "", NULL, NULL, $$); }
+	| LEFT_ASSIGN									{ $$ = buildNode(ASSIGNMENT_OPERATOR, "id1", "", NULL, NULL, $$); }
+	| RIGHT_ASSIGN									{ $$ = buildNode(ASSIGNMENT_OPERATOR, "id1", "", NULL, NULL, $$); }
+	| AND_ASSIGN									{ $$ = buildNode(ASSIGNMENT_OPERATOR, "id1", "", NULL, NULL, $$); }
+	| XOR_ASSIGN									{ $$ = buildNode(ASSIGNMENT_OPERATOR, "id1", "", NULL, NULL, $$); }
+	| OR_ASSIGN									{ $$ = buildNode(ASSIGNMENT_OPERATOR, "id1", "", NULL, NULL, $$); }
 	;
 
 expression
-	: assignment_expression
-	| expression ',' assignment_expression
+	: assignment_expression								{ $$ = buildNode(EXPRESSION, "id1", "", NULL, NULL, $$); }
+	| expression ',' assignment_expression						{ $$ = buildNode(EXPRESSION, "id1", "", NULL, NULL, $$); }
 	;
 
 declaration
-	: declaration_specifiers ';'
-	| declaration_specifiers init_declarator_list ';'
+	: declaration_specifiers ';'							{ $$ = buildNode(DECLARATION, "id1", "", NULL, NULL, $$); }
+	| declaration_specifiers init_declarator_list ';'				{ $$ = buildNode(DECLARATION, "id1", "", NULL, NULL, $$); }
 	;
 
 declaration_specifiers
-	: type_specifier
-	| type_specifier declaration_specifiers
+	: type_specifier								{ $$ = buildNode(DECLARATION_SPECIFIERS, "id1", "", NULL, NULL, $$); }
+	| type_specifier declaration_specifiers						{ $$ = buildNode(DECLARATION_SPECIFIERS, "id1", "", NULL, NULL, $$); }
 	;
 
 init_declarator_list
-	: init_declarator
-	| init_declarator_list ',' init_declarator
+	: init_declarator								{ $$ = buildNode(INIT_DECLARATOR_LIST, "id1", "", NULL, NULL, $$); }
+	| init_declarator_list ',' init_declarator					{ $$ = buildNode(INIT_DECLARATOR_LIST, "id1", "", NULL, NULL, $$); }
 	;
 
 init_declarator
-	: declarator
-	| declarator '=' initializer
+	: declarator									{ $$ = buildNode(INIT_DECLARATOR, "id1", "", NULL, NULL, $$); }
+	| declarator '=' initializer							{ $$ = buildNode(INIT_DECLARATOR, "id1", "", NULL, NULL, $$); }
 	;
 
 type_specifier
-	: VOID
-	| CHAR
-	| INT
-	| LONG
-	| FLOAT
-	| DOUBLE
-	| TYPE_NAME
+	: VOID										{ $$ = buildNode(TYPE_SPECIFIER, "id1", "", NULL, NULL, $$); }
+	| CHAR										{ $$ = buildNode(TYPE_SPECIFIER, "id1", "", NULL, NULL, $$); }
+	| INT										{ $$ = buildNode(TYPE_SPECIFIER, "id1", "", NULL, NULL, $$); }
+	| LONG										{ $$ = buildNode(TYPE_SPECIFIER, "id1", "", NULL, NULL, $$); }
+	| FLOAT										{ $$ = buildNode(TYPE_SPECIFIER, "id1", "", NULL, NULL, $$); }
+	| DOUBLE									{ $$ = buildNode(TYPE_SPECIFIER, "id1", "", NULL, NULL, $$); }
+	| TYPE_NAME									{ $$ = buildNode(TYPE_SPECIFIER, "id1", "", NULL, NULL, $$); }
 	;
 
 specifier_qualifier_list
-	: type_specifier specifier_qualifier_list
-	| type_specifier
+	: type_specifier specifier_qualifier_list					{ $$ = buildNode(SPECIFIER_QUALIFIER_LIST, "id1", "", NULL, NULL, $$); }
+	| type_specifier								{ $$ = buildNode(SPECIFIER_QUALIFIER_LIST, "id1", "", NULL, NULL, $$); }
 	;
 
 declarator
-	: direct_declarator
+	: direct_declarator								{ $$ = buildNode(DECLARATOR, "id1", "", NULL, NULL, $$); }
 	;
 
 
 direct_declarator
-	: IDENTIFIER
-	| '(' declarator ')'
-	| direct_declarator '[' assignment_expression ']'
-	| direct_declarator '[' ']'
-	| direct_declarator '(' parameter_type_list ')'
-	| direct_declarator '(' identifier_list ')'
-	| direct_declarator '(' ')'
+	: IDENTIFIER									{ $$ = buildNode(DIRECT_DECLARATOR, "id1", "", NULL, NULL, $$); }
+	| '(' declarator ')'								{ $$ = buildNode(DIRECT_DECLARATOR, "id1", "", NULL, NULL, $$); }
+	| direct_declarator '[' assignment_expression ']'				{ $$ = buildNode(DIRECT_DECLARATOR, "id1", "", NULL, NULL, $$); }
+	| direct_declarator '[' ']'							{ $$ = buildNode(DIRECT_DECLARATOR, "id1", "", NULL, NULL, $$); }
+	| direct_declarator '(' parameter_type_list ')'					{ $$ = buildNode(DIRECT_DECLARATOR, "id1", "", NULL, NULL, $$); }
+	| direct_declarator '(' identifier_list ')'					{ $$ = buildNode(DIRECT_DECLARATOR, "id1", "", NULL, NULL, $$); }
+	| direct_declarator '(' ')'							{ $$ = buildNode(DIRECT_DECLARATOR, "id1", "", NULL, NULL, $$); }
 	;
 
 parameter_type_list
-	: parameter_list
+	: parameter_list								{ $$ = buildNode(PARAMETER_TYPE_LIST, "id1", "", NULL, NULL, $$); }
 	;
 
 parameter_list
-	: parameter_declaration
-	| parameter_list ',' parameter_declaration
+	: parameter_declaration								{ $$ = buildNode(PARAMETER_LIST, "id1", "", NULL, NULL, $$); }
+	| parameter_list ',' parameter_declaration					{ $$ = buildNode(PARAMETER_LIST, "id1", "", NULL, NULL, $$); }
 	;
 
 parameter_declaration
-	: declaration_specifiers declarator
-	| declaration_specifiers abstract_declarator
-	| declaration_specifiers
+	: declaration_specifiers declarator						{ $$ = buildNode(PARAMETER_DECLARATION, "id1", "", NULL, NULL, $$); }
+	| declaration_specifiers abstract_declarator					{ $$ = buildNode(PARAMETER_DECLARATION, "id1", "", NULL, NULL, $$); }
+	| declaration_specifiers							{ $$ = buildNode(PARAMETER_DECLARATION, "id1", "", NULL, NULL, $$); }
 	;
 
 identifier_list
-	: IDENTIFIER
-	| identifier_list ',' IDENTIFIER
+	: IDENTIFIER									{ $$ = buildNode(IDENTIFIER_LIST, "id1", "", NULL, NULL, $$); }
+	| identifier_list ',' IDENTIFIER						{ $$ = buildNode(IDENTIFIER_LIST, "id1", "", NULL, NULL, $$); }
 	;
 
 type_name
-	: specifier_qualifier_list
-	| specifier_qualifier_list abstract_declarator
+	: specifier_qualifier_list							{ $$ = buildNode(TYPE_NAME, "id1", "", NULL, NULL, $$); }
+	| specifier_qualifier_list abstract_declarator					{ $$ = buildNode(TYPE_NAME, "id1", "", NULL, NULL, $$); }
 	;
 
 abstract_declarator
-	: '(' abstract_declarator ')'
-	| '[' ']'
-	| '[' assignment_expression ']'
-	| abstract_declarator '[' ']'
-	| abstract_declarator '[' assignment_expression ']'
-	| '(' ')'
-	| '(' parameter_type_list ')'
-	| abstract_declarator '(' ')'
-	| abstract_declarator '(' parameter_type_list ')'
+	: '(' abstract_declarator ')'							{ $$ = buildNode(ABSTRACT_DECLARATOR, "id1", "", NULL, NULL, $$); }
+	| '[' ']'									{ $$ = buildNode(ABSTRACT_DECLARATOR, "id1", "", NULL, NULL, $$); }
+	| '[' assignment_expression ']'							{ $$ = buildNode(ABSTRACT_DECLARATOR, "id1", "", NULL, NULL, $$); }
+	| abstract_declarator '[' ']'							{ $$ = buildNode(ABSTRACT_DECLARATOR, "id1", "", NULL, NULL, $$); }
+	| abstract_declarator '[' assignment_expression ']'				{ $$ = buildNode(ABSTRACT_DECLARATOR, "id1", "", NULL, NULL, $$); }
+	| '(' ')'									{ $$ = buildNode(ABSTRACT_DECLARATOR, "id1", "", NULL, NULL, $$); }
+	| '(' parameter_type_list ')'							{ $$ = buildNode(ABSTRACT_DECLARATOR, "id1", "", NULL, NULL, $$); }
+	| abstract_declarator '(' ')'							{ $$ = buildNode(ABSTRACT_DECLARATOR, "id1", "", NULL, NULL, $$); }
+	| abstract_declarator '(' parameter_type_list ')'				{ $$ = buildNode(ABSTRACT_DECLARATOR, "id1", "", NULL, NULL, $$); }
 	;
 
 initializer
-	: assignment_expression
-	| '{' initializer_list '}'
-	| '{' initializer_list ',' '}'
+	: assignment_expression								{ $$ = buildNode(INITIALIZER, "id1", "", NULL, NULL, $$); }
+	| '{' initializer_list '}'							{ $$ = buildNode(INITIALIZER, "id1", "", NULL, NULL, $$); }
+	| '{' initializer_list ',' '}'							{ $$ = buildNode(INITIALIZER, "id1", "", NULL, NULL, $$); }
 	;
 
 initializer_list
-	: initializer
-	| designation initializer
-	| initializer_list ',' initializer
-	| initializer_list ',' designation initializer
+	: initializer									{ $$ = buildNode(INITIALIZER_LIST, "id1", "", NULL, NULL, $$); }
+	| designation initializer							{ $$ = buildNode(INITIALIZER_LIST, "id1", "", NULL, NULL, $$); }
+	| initializer_list ',' initializer						{ $$ = buildNode(INITIALIZER_LIST, "id1", "", NULL, NULL, $$); }
+	| initializer_list ',' designation initializer					{ $$ = buildNode(INITIALIZER_LIST, "id1", "", NULL, NULL, $$); }
 	;
 
 designation
-	: designator_list '='
+	: designator_list '='								{ $$ = buildNode(DESIGNATION, "id1", "", NULL, NULL, $$); }
 	;
 
 designator_list
-	: designator
-	| designator_list designator
+	: designator									{ $$ = buildNode(DESIGNATOR_LIST, "id1", "", NULL, NULL, $$); }
+	| designator_list designator							{ $$ = buildNode(DESIGNATOR_LIST, "id1", "", NULL, NULL, $$); }
 	;
 
 designator
-	: '[' conditional_expression ']'
-	| '.' IDENTIFIER
+	: '[' conditional_expression ']'						{ $$ = buildNode(DESIGNATOR, "id1", "", NULL, NULL, $$); }
+	| '.' IDENTIFIER								{ $$ = buildNode(DESIGNATOR, "id1", "", NULL, NULL, $$); }
 	;
 
 statement
-	: labeled_statement
-	| compound_statement
-	| expression_statement
-	| selection_statement
-	| iteration_statement
-	| jump_statement
+	: labeled_statement								{ $$ = buildNode(STATEMENT, "id1", "", NULL, NULL, $$); }
+	| compound_statement								{ $$ = buildNode(STATEMENT, "id1", "", NULL, NULL, $$); }
+	| expression_statement								{ $$ = buildNode(STATEMENT, "id1", "", NULL, NULL, $$); }
+	| selection_statement								{ $$ = buildNode(STATEMENT, "id1", "", NULL, NULL, $$); }
+	| iteration_statement								{ $$ = buildNode(STATEMENT, "id1", "", NULL, NULL, $$); }
+	| jump_statement								{ $$ = buildNode(STATEMENT, "id1", "", NULL, NULL, $$); }
 	;
 
 labeled_statement
-	: CASE conditional_expression ':' statement
-	| DEFAULT ':' statement
+	: CASE conditional_expression ':' statement					{ $$ = buildNode(LABELED_STATEMENT, "id1", "", NULL, NULL, $$); }
+	| DEFAULT ':' statement								{ $$ = buildNode(LABELED_STATEMENT, "id1", "", NULL, NULL, $$); }
 	;
 
 compound_statement
-	: '{' '}'
-	| '{' block_item_list '}'
+	: '{' '}'									{ $$ = buildNode(COMPOUND_STATEMENT, "id1", "", NULL, NULL, $$); }
+	| '{' block_item_list '}'							{ $$ = buildNode(COMPOUND_STATEMENT, "id1", "", NULL, NULL, $$); }
 	;
 
 block_item_list
-	: block_item
-	| block_item_list block_item
+	: block_item									{ $$ = buildNode(BLOCK_ITEM_LIST, "id1", "", NULL, NULL, $$); }
+	| block_item_list block_item							{ $$ = buildNode(BLOCK_ITEM_LIST, "id1", "", NULL, NULL, $$); }
 	;
 
 block_item
-	: error ';'
-	| declaration
-	| statement
+	: error ';'									{ $$ = buildNode(BLOCK_ITEM, "id1", "", NULL, NULL, $$); }
+	| declaration									{ $$ = buildNode(BLOCK_ITEM, "id1", "", NULL, NULL, $$); }
+	| statement									{ $$ = buildNode(BLOCK_ITEM, "id1", "", NULL, NULL, $$); }
 	;
 
 expression_statement
-	: ';'
-	| expression ';'
+	: ';'										{ $$ = buildNode(EXPRESSION_STATEMENT, "id1", "", NULL, NULL, $$); }
+	| expression ';'								{ $$ = buildNode(EXPRESSION_STATEMENT, "id1", "", NULL, NULL, $$); }
 	;
 
 selection_statement
-	: IF '(' expression ')' statement
-	| IF_WITH_ELSE '(' expression ')' statement ELSE statement
-	| SWITCH '(' expression ')' statement
+	: IF '(' expression ')' statement						{ $$ = buildNode(SELECTION_STATEMENT, "id1", "", NULL, NULL, $$); }
+	| IF_WITH_ELSE '(' expression ')' statement ELSE statement			{ $$ = buildNode(SELECTION_STATEMENT, "id1", "", NULL, NULL, $$); }
+	| SWITCH '(' expression ')' statement						{ $$ = buildNode(SELECTION_STATEMENT, "id1", "", NULL, NULL, $$); }
 	;
 
 iteration_statement
-	: WHILE '(' expression ')' statement
-	| DO statement WHILE '(' expression ')' ';'
-	| FOR '(' expression_statement expression_statement expression ')' statement
+	: WHILE '(' expression ')' statement						{ $$ = buildNode(ITERATION_STATEMENT, "id1", "", NULL, NULL, $$); }
+	| DO statement WHILE '(' expression ')' ';'					{ $$ = buildNode(ITERATION_STATEMENT, "id1", "", NULL, NULL, $$); }
+	| FOR '(' expression_statement expression_statement expression ')' statement	{ $$ = buildNode(ITERATION_STATEMENT, "id1", "", NULL, NULL, $$); }
 	;
 
 jump_statement
-	: CONTINUE ';'
-	| BREAK ';'
-	| RETURN ';'
-	| RETURN expression ';'
+	: CONTINUE ';'									{ $$ = buildNode(JUMP_STATEMENT, "id1", "", NULL, NULL, $$); }
+	| BREAK ';'									{ $$ = buildNode(JUMP_STATEMENT, "id1", "", NULL, NULL, $$); }
+	| RETURN ';'									{ $$ = buildNode(JUMP_STATEMENT, "id1", "", NULL, NULL, $$); }
+	| RETURN expression ';'								{ $$ = buildNode(JUMP_STATEMENT, "id1", "", NULL, NULL, $$); }
 	;
 
 translation_unit
-	: external_declaration
-	| translation_unit external_declaration
+	: external_declaration								{ $$ = buildNode(TRANSLATION_UNIT, "id1", "", NULL, NULL, $$); }
+	| translation_unit external_declaration						{ $$ = buildNode(TRANSLATION_UNIT, "id1", "", NULL, NULL, $$); }
 	;
 
 external_declaration
-	: function_definition
-	| declaration
+	: function_definition								{ $$ = buildNode(EXTERNAL_DECLARATION, "id1", "", NULL, NULL, $$); }
+	| declaration									{ $$ = buildNode(EXTERNAL_DECLARATION, "id1", "", NULL, NULL, $$); }
 	;
 
 function_definition
-	: declaration_specifiers declarator declaration_list compound_statement
-	| declaration_specifiers declarator compound_statement
+	: declaration_specifiers declarator declaration_list compound_statement		{ $$ = buildNode(FUNCTION_DEFINITION, "id1", "", NULL, NULL, $$); }
+	| declaration_specifiers declarator compound_statement				{ $$ = buildNode(FUNCTION_DEFINITION, "id1", "", NULL, NULL, $$); }
 	;
 
 declaration_list
-	: declaration
-	| declaration_list declaration
+	: declaration									{ $$ = buildNode(DECLARATION_LIST, "id1", "", NULL, NULL, $$); }
+	| declaration_list declaration							{ $$ = buildNode(DECLARATION_LIST, "id1", "", NULL, NULL, $$); }
 	;
 
 
