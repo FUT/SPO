@@ -4,7 +4,7 @@ int main()
   long b = 5;
   b += a;
 
-  if_with_else (a > 2) 
+  />if_with_else (a > 2) 
   {
     a = 7;
   }
@@ -16,5 +16,5 @@ int main()
   while (a < 20)
   {
     a++;
-  }
+  }</
 }
