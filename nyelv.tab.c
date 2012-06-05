@@ -1798,308 +1798,308 @@ yyreduce:
 
 /* Line 1806 of yacc.c  */
 #line 48 "nyelv.y"
-    { (yyval.NODE) = buildNode(PRIMARY_EXPRESSION, "p_exp", (yyvsp[(1) - (1)].TEXT), NULL, NULL); }
+    { (yyval.NODE) = buildNode(PRIMARY_EXPRESSION, "p_exp1", (yyvsp[(1) - (1)].TEXT), NULL, NULL); }
     break;
 
   case 3:
 
 /* Line 1806 of yacc.c  */
 #line 49 "nyelv.y"
-    { (yyval.NODE) = buildNode(PRIMARY_EXPRESSION, "p_exp", (yyvsp[(1) - (1)].TEXT), NULL, NULL); }
+    { (yyval.NODE) = buildNode(PRIMARY_EXPRESSION, "p_exp2", (yyvsp[(1) - (1)].TEXT), NULL, NULL); }
     break;
 
   case 4:
 
 /* Line 1806 of yacc.c  */
 #line 50 "nyelv.y"
-    { (yyval.NODE) = buildNode(PRIMARY_EXPRESSION, "p_exp", (yyvsp[(1) - (1)].TEXT), NULL, NULL); }
+    { (yyval.NODE) = buildNode(PRIMARY_EXPRESSION, "p_exp3", (yyvsp[(1) - (1)].TEXT), NULL, NULL); }
     break;
 
   case 5:
 
 /* Line 1806 of yacc.c  */
 #line 51 "nyelv.y"
-    { (yyval.NODE) = buildNode(PRIMARY_EXPRESSION, "p_exp", (yyvsp[(1) - (1)].TEXT), NULL, NULL); }
+    { (yyval.NODE) = buildNode(PRIMARY_EXPRESSION, "p_exp4", (yyvsp[(1) - (1)].TEXT), NULL, NULL); }
     break;
 
   case 6:
 
 /* Line 1806 of yacc.c  */
 #line 52 "nyelv.y"
-    { (yyval.NODE) = buildNode(PRIMARY_EXPRESSION, "(exp)", "()", (yyvsp[(2) - (3)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(PRIMARY_EXPRESSION, "p_exp5", NULL, (yyvsp[(2) - (3)].NODE), NULL); }
     break;
 
   case 8:
 
 /* Line 1806 of yacc.c  */
 #line 57 "nyelv.y"
-    { (yyval.NODE) = buildNode(POSTFIX_EXPRESSION, "pos_exp[exp]", "", (yyvsp[(1) - (4)].NODE), (yyvsp[(3) - (4)].NODE)); }
+    { (yyval.NODE) = buildNode(POSTFIX_EXPRESSION, "post_exp1", NULL, (yyvsp[(1) - (4)].NODE), (yyvsp[(3) - (4)].NODE)); }
     break;
 
   case 9:
 
 /* Line 1806 of yacc.c  */
 #line 58 "nyelv.y"
-    { (yyval.NODE) = buildNode(POSTFIX_EXPRESSION, "pos_exp()", "", (yyvsp[(1) - (3)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(POSTFIX_EXPRESSION, "post_exp2", NULL, (yyvsp[(1) - (3)].NODE), NULL); }
     break;
 
   case 10:
 
 /* Line 1806 of yacc.c  */
 #line 59 "nyelv.y"
-    { (yyval.NODE) = buildNode(POSTFIX_EXPRESSION, "pos_exp(par1, par2)", "", (yyvsp[(1) - (4)].NODE), (yyvsp[(3) - (4)].NODE)); }
+    { (yyval.NODE) = buildNode(POSTFIX_EXPRESSION, "post_exp3", NULL, (yyvsp[(1) - (4)].NODE), (yyvsp[(3) - (4)].NODE)); }
     break;
 
   case 11:
 
 /* Line 1806 of yacc.c  */
 #line 60 "nyelv.y"
-    { (yyval.NODE) = buildNode(POSTFIX_EXPRESSION, "pos_exp.a", (yyvsp[(3) - (3)].TEXT), (yyvsp[(1) - (3)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(POSTFIX_EXPRESSION, "post_exp4", (yyvsp[(3) - (3)].TEXT), (yyvsp[(1) - (3)].NODE), NULL); }
     break;
 
   case 12:
 
 /* Line 1806 of yacc.c  */
 #line 61 "nyelv.y"
-    { (yyval.NODE) = buildNode(POSTFIX_EXPRESSION, "id1++", (yyvsp[(2) - (2)].TEXT), (yyvsp[(1) - (2)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(POSTFIX_EXPRESSION, "post_exp5", "++", (yyvsp[(1) - (2)].NODE), NULL); }
     break;
 
   case 13:
 
 /* Line 1806 of yacc.c  */
 #line 62 "nyelv.y"
-    { (yyval.NODE) = buildNode(POSTFIX_EXPRESSION, "id1--", (yyvsp[(2) - (2)].TEXT), (yyvsp[(1) - (2)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(POSTFIX_EXPRESSION, "post_exp6", "--", (yyvsp[(1) - (2)].NODE), NULL); }
     break;
 
   case 15:
 
 /* Line 1806 of yacc.c  */
 #line 67 "nyelv.y"
-    { (yyval.NODE) = buildNode(ARGUMENT_EXPRESSION_LIST, "id1 = 1, id2 = 2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(ARGUMENT_EXPRESSION_LIST, "ael1", NULL, (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 17:
 
 /* Line 1806 of yacc.c  */
 #line 72 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "id1", "++id1", (yyvsp[(2) - (2)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "un_exp1", NULL, (yyvsp[(2) - (2)].NODE), NULL); }
     break;
 
   case 18:
 
 /* Line 1806 of yacc.c  */
 #line 73 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "id1", "--id1", (yyvsp[(2) - (2)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "un_exp2", NULL, (yyvsp[(2) - (2)].NODE), NULL); }
     break;
 
   case 19:
 
 /* Line 1806 of yacc.c  */
 #line 74 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "+^-id1", "unary_cast", (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "un_exp3", NULL, (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
     break;
 
   case 20:
 
 /* Line 1806 of yacc.c  */
 #line 75 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "size_of u_exp", "", (yyvsp[(2) - (2)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "un_exp4", NULL, (yyvsp[(2) - (2)].NODE), NULL); }
     break;
 
   case 21:
 
 /* Line 1806 of yacc.c  */
 #line 76 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "size_of int", "", (yyvsp[(3) - (4)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "un_exp5", NULL, (yyvsp[(3) - (4)].NODE), NULL); }
     break;
 
   case 22:
 
 /* Line 1806 of yacc.c  */
 #line 80 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "&", "&", NULL, NULL); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "un_op1", "&", NULL, NULL); }
     break;
 
   case 23:
 
 /* Line 1806 of yacc.c  */
 #line 81 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "*", "*", NULL, NULL); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "un_op2", "*", NULL, NULL); }
     break;
 
   case 24:
 
 /* Line 1806 of yacc.c  */
 #line 82 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "+", "+", NULL, NULL); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "un_op3", "+", NULL, NULL); }
     break;
 
   case 25:
 
 /* Line 1806 of yacc.c  */
 #line 83 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "-", "-", NULL, NULL); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "un_op4", "-", NULL, NULL); }
     break;
 
   case 26:
 
 /* Line 1806 of yacc.c  */
 #line 84 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "~", "~", NULL, NULL); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "un_op5", "~", NULL, NULL); }
     break;
 
   case 27:
 
 /* Line 1806 of yacc.c  */
 #line 85 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "!", "!", NULL, NULL); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "un_op6", "!", NULL, NULL); }
     break;
 
   case 29:
 
 /* Line 1806 of yacc.c  */
 #line 90 "nyelv.y"
-    { (yyval.NODE) = buildNode(CAST_EXPRESSION, "(int)c_exp", "(type)cast", (yyvsp[(2) - (4)].NODE), (yyvsp[(4) - (4)].NODE)); }
+    { (yyval.NODE) = buildNode(CAST_EXPRESSION, "cast_exp1", NULL, (yyvsp[(2) - (4)].NODE), (yyvsp[(4) - (4)].NODE)); }
     break;
 
   case 31:
 
 /* Line 1806 of yacc.c  */
 #line 95 "nyelv.y"
-    { (yyval.NODE) = buildNode(MULTIPLICATIVE_EXPRESSION, "id1 * id2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(MULTIPLICATIVE_EXPRESSION, "mul_exp1", "*", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 32:
 
 /* Line 1806 of yacc.c  */
 #line 96 "nyelv.y"
-    { (yyval.NODE) = buildNode(MULTIPLICATIVE_EXPRESSION, "id1 / id2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(MULTIPLICATIVE_EXPRESSION, "mul_exp2", "/", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 33:
 
 /* Line 1806 of yacc.c  */
 #line 97 "nyelv.y"
-    { (yyval.NODE) = buildNode(MULTIPLICATIVE_EXPRESSION, "id1 % id2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(MULTIPLICATIVE_EXPRESSION, "mul_exp3", "%", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 35:
 
 /* Line 1806 of yacc.c  */
 #line 102 "nyelv.y"
-    { (yyval.NODE) = buildNode(ADDITIVE_EXPRESSION, "id1 + id2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(ADDITIVE_EXPRESSION, "add_exp1", "+", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 36:
 
 /* Line 1806 of yacc.c  */
 #line 103 "nyelv.y"
-    { (yyval.NODE) = buildNode(ADDITIVE_EXPRESSION, "id1 - id2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(ADDITIVE_EXPRESSION, "add_exp2", "-", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 38:
 
 /* Line 1806 of yacc.c  */
 #line 108 "nyelv.y"
-    { (yyval.NODE) = buildNode(SHIFT_EXPRESSION, "id1 << 1", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(SHIFT_EXPRESSION, "shift_exp1", "<<", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 39:
 
 /* Line 1806 of yacc.c  */
 #line 109 "nyelv.y"
-    { (yyval.NODE) = buildNode(SHIFT_EXPRESSION, "id1 >> 1", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(SHIFT_EXPRESSION, "shift_exp2", ">>", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 41:
 
 /* Line 1806 of yacc.c  */
 #line 114 "nyelv.y"
-    { (yyval.NODE) = buildNode(RELATIONAL_EXPRESSION, "id1 < id2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(RELATIONAL_EXPRESSION, "rel_exp1", "<", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 42:
 
 /* Line 1806 of yacc.c  */
 #line 115 "nyelv.y"
-    { (yyval.NODE) = buildNode(RELATIONAL_EXPRESSION, "id1 > id2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(RELATIONAL_EXPRESSION, "rel_exp2", ">", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 43:
 
 /* Line 1806 of yacc.c  */
 #line 116 "nyelv.y"
-    { (yyval.NODE) = buildNode(RELATIONAL_EXPRESSION, "id1 <= id2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(RELATIONAL_EXPRESSION, "rel_exp3", "<=", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 44:
 
 /* Line 1806 of yacc.c  */
 #line 117 "nyelv.y"
-    { (yyval.NODE) = buildNode(RELATIONAL_EXPRESSION, "id1 >= id2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(RELATIONAL_EXPRESSION, "rel_exp4", ">=", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 46:
 
 /* Line 1806 of yacc.c  */
 #line 122 "nyelv.y"
-    { (yyval.NODE) = buildNode(EQUALITY_EXPRESSION, "id1 == id2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(EQUALITY_EXPRESSION, "eq_exp1", "==", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 47:
 
 /* Line 1806 of yacc.c  */
 #line 123 "nyelv.y"
-    { (yyval.NODE) = buildNode(EQUALITY_EXPRESSION, "id1 != id2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(EQUALITY_EXPRESSION, "eq_exp2", "!=", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 49:
 
 /* Line 1806 of yacc.c  */
 #line 128 "nyelv.y"
-    { (yyval.NODE) = buildNode(AND_EXPRESSION, "id1 & id2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(AND_EXPRESSION, "and_exp1", "&", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 51:
 
 /* Line 1806 of yacc.c  */
 #line 133 "nyelv.y"
-    { (yyval.NODE) = buildNode(EXCLUSIVE_OR_EXPRESSION, "id1 ^ id2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(EXCLUSIVE_OR_EXPRESSION, "ex_or_exp1", "^", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 53:
 
 /* Line 1806 of yacc.c  */
 #line 138 "nyelv.y"
-    { (yyval.NODE) = buildNode(INCLUSIVE_OR_EXPRESSION, "id1 | id2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(INCLUSIVE_OR_EXPRESSION, "or_exp1", "|", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 55:
 
 /* Line 1806 of yacc.c  */
 #line 143 "nyelv.y"
-    { (yyval.NODE) = buildNode(LOGICAL_AND_EXPRESSION, "id1 && id2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(LOGICAL_AND_EXPRESSION, "l_and_exp1", "&&", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 57:
 
 /* Line 1806 of yacc.c  */
 #line 148 "nyelv.y"
-    { (yyval.NODE) = buildNode(LOGICAL_OR_EXPRESSION, "id1 || id2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(LOGICAL_OR_EXPRESSION, "l_or_exp1", "||", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 59:
 
 /* Line 1806 of yacc.c  */
 #line 153 "nyelv.y"
-    { (yyval.NODE) = buildFullNode(CONDITIONAL_EXPRESSION, "id1 ? id2 : id3", "", NULL, NULL, (yyvsp[(1) - (5)].NODE), (yyvsp[(3) - (5)].NODE), (yyvsp[(5) - (5)].NODE)); }
+    { (yyval.NODE) = buildFullNode(CONDITIONAL_EXPRESSION, "cond_exp1", NULL, NULL, NULL, (yyvsp[(1) - (5)].NODE), (yyvsp[(3) - (5)].NODE), (yyvsp[(5) - (5)].NODE)); }
     break;
 
   case 61:
 
 /* Line 1806 of yacc.c  */
 #line 158 "nyelv.y"
-    { (yyval.NODE) = buildFullNode(ASSIGNMENT_EXPRESSION, "-id1 = exp", "uaa", NULL, NULL, (yyvsp[(1) - (3)].NODE), (yyvsp[(2) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildFullNode(ASSIGNMENT_EXPRESSION, "assign_exp1", NULL, NULL, NULL, (yyvsp[(1) - (3)].NODE), (yyvsp[(2) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 62:
@@ -2113,406 +2113,406 @@ yyreduce:
 
 /* Line 1806 of yacc.c  */
 #line 163 "nyelv.y"
-    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "=", "*=", NULL, NULL); }
+    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "*=", "*=", NULL, NULL); }
     break;
 
   case 64:
 
 /* Line 1806 of yacc.c  */
 #line 164 "nyelv.y"
-    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "=", "/=", NULL, NULL); }
+    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "/=", "/=", NULL, NULL); }
     break;
 
   case 65:
 
 /* Line 1806 of yacc.c  */
 #line 165 "nyelv.y"
-    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "=", "%=", NULL, NULL); }
+    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "%=", "%=", NULL, NULL); }
     break;
 
   case 66:
 
 /* Line 1806 of yacc.c  */
 #line 166 "nyelv.y"
-    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "=", "+=", NULL, NULL); }
+    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "+=", "+=", NULL, NULL); }
     break;
 
   case 67:
 
 /* Line 1806 of yacc.c  */
 #line 167 "nyelv.y"
-    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "=", "-=", NULL, NULL); }
+    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "-=", "-=", NULL, NULL); }
     break;
 
   case 68:
 
 /* Line 1806 of yacc.c  */
 #line 168 "nyelv.y"
-    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "=", "<<=", NULL, NULL); }
+    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "<<=", "<<=", NULL, NULL); }
     break;
 
   case 69:
 
 /* Line 1806 of yacc.c  */
 #line 169 "nyelv.y"
-    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "=", ">>=", NULL, NULL); }
+    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, ">>=", ">>=", NULL, NULL); }
     break;
 
   case 70:
 
 /* Line 1806 of yacc.c  */
 #line 170 "nyelv.y"
-    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "=", "&=", NULL, NULL); }
+    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "&=", "&=", NULL, NULL); }
     break;
 
   case 71:
 
 /* Line 1806 of yacc.c  */
 #line 171 "nyelv.y"
-    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "=", "^=", NULL, NULL); }
+    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "^=", "^=", NULL, NULL); }
     break;
 
   case 72:
 
 /* Line 1806 of yacc.c  */
 #line 172 "nyelv.y"
-    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "=", "|=", NULL, NULL); }
+    { (yyval.NODE) = buildNode(ASSIGNMENT_OPERATOR, "|=", "|=", NULL, NULL); }
     break;
 
   case 74:
 
 /* Line 1806 of yacc.c  */
 #line 177 "nyelv.y"
-    { (yyval.NODE) = buildNode(EXPRESSION, "exp, assign_exp", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(EXPRESSION, "exp1", NULL, (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 75:
 
 /* Line 1806 of yacc.c  */
 #line 181 "nyelv.y"
-    { (yyval.NODE) = buildNode(DECLARATION, "int id1", "ds", (yyvsp[(1) - (2)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(DECLARATION, "decl1", NULL, (yyvsp[(1) - (2)].NODE), NULL); }
     break;
 
   case 76:
 
 /* Line 1806 of yacc.c  */
 #line 182 "nyelv.y"
-    { (yyval.NODE) = buildNode(DECLARATION, "int id1 = 1, id2 = 2", "ds idl", (yyvsp[(1) - (3)].NODE), (yyvsp[(2) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(DECLARATION, "decl2", NULL, (yyvsp[(1) - (3)].NODE), (yyvsp[(2) - (3)].NODE)); }
     break;
 
   case 78:
 
 /* Line 1806 of yacc.c  */
 #line 187 "nyelv.y"
-    { (yyval.NODE) = buildNode(DECLARATION, "int int id1 = 1", "ts ds", (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
+    { (yyval.NODE) = buildNode(DECLARATION, "decl_spec1", NULL, (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
     break;
 
   case 80:
 
 /* Line 1806 of yacc.c  */
 #line 192 "nyelv.y"
-    { (yyval.NODE) = buildNode(INIT_DECLARATOR_LIST, "id1", "idl, il", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(INIT_DECLARATOR_LIST, "init_decl_list1", NULL, (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 82:
 
 /* Line 1806 of yacc.c  */
 #line 197 "nyelv.y"
-    { (yyval.NODE) = buildNode(INIT_DECLARATOR, "id1 = 1", "d = i", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(INIT_DECLARATOR, "init_decl1", NULL, (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 83:
 
 /* Line 1806 of yacc.c  */
 #line 201 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "type", "void", NULL, NULL); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "type1", "void ", NULL, NULL); }
     break;
 
   case 84:
 
 /* Line 1806 of yacc.c  */
 #line 202 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "type", "char", NULL, NULL); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "type1", "char ", NULL, NULL); }
     break;
 
   case 85:
 
 /* Line 1806 of yacc.c  */
 #line 203 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "type", "int", NULL, NULL); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "type1", "int ", NULL, NULL); }
     break;
 
   case 86:
 
 /* Line 1806 of yacc.c  */
 #line 204 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "type", "long", NULL, NULL); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "type1", "long ", NULL, NULL); }
     break;
 
   case 87:
 
 /* Line 1806 of yacc.c  */
 #line 205 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "type", "float", NULL, NULL); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "type1", "float ", NULL, NULL); }
     break;
 
   case 88:
 
 /* Line 1806 of yacc.c  */
 #line 206 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "type", "double", NULL, NULL); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "type1", "double ", NULL, NULL); }
     break;
 
   case 89:
 
 /* Line 1806 of yacc.c  */
 #line 210 "nyelv.y"
-    { (yyval.NODE) = buildNode(DECLARATION, "int sc id1 = 1", "ts sql", (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
+    { (yyval.NODE) = buildNode(DECLARATION, "spec_qual_list", NULL, (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
     break;
 
   case 91:
 
 /* Line 1806 of yacc.c  */
 #line 215 "nyelv.y"
-    { (yyval.NODE) = buildNode(DECLARATOR, "id", (yyvsp[(1) - (1)].TEXT), NULL, NULL); }
+    { (yyval.NODE) = buildNode(DECLARATOR, "decl1", (yyvsp[(1) - (1)].TEXT), NULL, NULL); }
     break;
 
   case 92:
 
 /* Line 1806 of yacc.c  */
 #line 216 "nyelv.y"
-    { (yyval.NODE) = buildNode(DECLARATOR, "(id1)", "", (yyvsp[(2) - (3)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(DECLARATOR, "decl2", NULL, (yyvsp[(2) - (3)].NODE), NULL); }
     break;
 
   case 93:
 
 /* Line 1806 of yacc.c  */
 #line 217 "nyelv.y"
-    { (yyval.NODE) = buildNode(DECLARATOR, "id1[assign_exp]", "", (yyvsp[(1) - (4)].NODE), (yyvsp[(3) - (4)].NODE)); }
+    { (yyval.NODE) = buildNode(DECLARATOR, "decl3", NULL, (yyvsp[(1) - (4)].NODE), (yyvsp[(3) - (4)].NODE)); }
     break;
 
   case 94:
 
 /* Line 1806 of yacc.c  */
 #line 218 "nyelv.y"
-    { (yyval.NODE) = buildNode(DECLARATOR, "id1[]", "", (yyvsp[(1) - (3)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(DECLARATOR, "decl4", NULL, (yyvsp[(1) - (3)].NODE), NULL); }
     break;
 
   case 95:
 
 /* Line 1806 of yacc.c  */
 #line 219 "nyelv.y"
-    { (yyval.NODE) = buildNode(DECLARATOR, "id1(par1, par2)", "", (yyvsp[(1) - (4)].NODE), (yyvsp[(3) - (4)].NODE)); }
+    { (yyval.NODE) = buildNode(DECLARATOR, "decl5", NULL, (yyvsp[(1) - (4)].NODE), (yyvsp[(3) - (4)].NODE)); }
     break;
 
   case 96:
 
 /* Line 1806 of yacc.c  */
 #line 220 "nyelv.y"
-    { (yyval.NODE) = buildNode(DECLARATOR, "id1(id1, id2)", "", (yyvsp[(1) - (4)].NODE), (yyvsp[(3) - (4)].NODE)); }
+    { (yyval.NODE) = buildNode(DECLARATOR, "decl6", NULL, (yyvsp[(1) - (4)].NODE), (yyvsp[(3) - (4)].NODE)); }
     break;
 
   case 97:
 
 /* Line 1806 of yacc.c  */
 #line 221 "nyelv.y"
-    { (yyval.NODE) = buildNode(DECLARATOR, "id1()", "id()", (yyvsp[(1) - (3)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(DECLARATOR, "decl7", NULL, (yyvsp[(1) - (3)].NODE), NULL); }
     break;
 
   case 99:
 
 /* Line 1806 of yacc.c  */
 #line 226 "nyelv.y"
-    { (yyval.NODE) = buildNode(PARAMETER_TYPE_LIST, "int id1, int id2", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(PARAMETER_TYPE_LIST, "par_type_list1", NULL, (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 100:
 
 /* Line 1806 of yacc.c  */
 #line 230 "nyelv.y"
-    { (yyval.NODE) = buildNode(PARAMETER_DECLARATION, "int id1", "ds d", (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
+    { (yyval.NODE) = buildNode(PARAMETER_DECLARATION, "par_decl1", NULL, (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
     break;
 
   case 101:
 
 /* Line 1806 of yacc.c  */
 #line 231 "nyelv.y"
-    { (yyval.NODE) = buildNode(PARAMETER_DECLARATION, "int abstr id1", NULL, (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
+    { (yyval.NODE) = buildNode(PARAMETER_DECLARATION, "par_decl2", NULL, (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
     break;
 
   case 103:
 
 /* Line 1806 of yacc.c  */
 #line 236 "nyelv.y"
-    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "id", (yyvsp[(1) - (1)].TEXT), NULL, NULL); }
+    { (yyval.NODE) = buildNode(UNARY_EXPRESSION, "ident_list1", (yyvsp[(1) - (1)].TEXT), NULL, NULL); }
     break;
 
   case 104:
 
 /* Line 1806 of yacc.c  */
 #line 237 "nyelv.y"
-    { (yyval.NODE) = buildNode(IDENTIFIER_LIST, "id1, id2", (yyvsp[(3) - (3)].TEXT), (yyvsp[(1) - (3)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(IDENTIFIER_LIST, "ident_list2", (yyvsp[(3) - (3)].TEXT), (yyvsp[(1) - (3)].NODE), NULL); }
     break;
 
   case 106:
 
 /* Line 1806 of yacc.c  */
 #line 242 "nyelv.y"
-    { (yyval.NODE) = buildNode(TYPE_NAME, "type1 type2", "sql ad", (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
+    { (yyval.NODE) = buildNode(TYPE_NAME, "type_name1", NULL, (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
     break;
 
   case 107:
 
 /* Line 1806 of yacc.c  */
 #line 246 "nyelv.y"
-    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "(abstr_decl)", "", (yyvsp[(2) - (3)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "abstr_decl1", NULL, (yyvsp[(2) - (3)].NODE), NULL); }
     break;
 
   case 108:
 
 /* Line 1806 of yacc.c  */
 #line 247 "nyelv.y"
-    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "[]", "", NULL, NULL); }
+    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "abstr_decl2", NULL, NULL, NULL); }
     break;
 
   case 109:
 
 /* Line 1806 of yacc.c  */
 #line 248 "nyelv.y"
-    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "[assign_exp]", "", (yyvsp[(2) - (3)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "abstr_decl3", NULL, (yyvsp[(2) - (3)].NODE), NULL); }
     break;
 
   case 110:
 
 /* Line 1806 of yacc.c  */
 #line 249 "nyelv.y"
-    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "abstr_decl[]", "", (yyvsp[(1) - (3)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "abstr_decl4", NULL, (yyvsp[(1) - (3)].NODE), NULL); }
     break;
 
   case 111:
 
 /* Line 1806 of yacc.c  */
 #line 250 "nyelv.y"
-    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "abstr_decl[assign_exp]", "", (yyvsp[(1) - (4)].NODE), (yyvsp[(3) - (4)].NODE)); }
+    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "abstr_decl5", NULL, (yyvsp[(1) - (4)].NODE), (yyvsp[(3) - (4)].NODE)); }
     break;
 
   case 112:
 
 /* Line 1806 of yacc.c  */
 #line 251 "nyelv.y"
-    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "()", "", NULL, NULL); }
+    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "abstr_decl6", NULL, NULL, NULL); }
     break;
 
   case 113:
 
 /* Line 1806 of yacc.c  */
 #line 252 "nyelv.y"
-    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "(par1, par2)", "", (yyvsp[(2) - (3)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "abstr_decl7", NULL, (yyvsp[(2) - (3)].NODE), NULL); }
     break;
 
   case 114:
 
 /* Line 1806 of yacc.c  */
 #line 253 "nyelv.y"
-    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "abstr_decl()", "", (yyvsp[(1) - (3)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "abstr_decl8", NULL, (yyvsp[(1) - (3)].NODE), NULL); }
     break;
 
   case 115:
 
 /* Line 1806 of yacc.c  */
 #line 254 "nyelv.y"
-    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "abstr_decl(par1, par2)", "", (yyvsp[(1) - (4)].NODE), (yyvsp[(3) - (4)].NODE)); }
+    { (yyval.NODE) = buildNode(ABSTRACT_DECLARATOR, "abstr_decl9", NULL, (yyvsp[(1) - (4)].NODE), (yyvsp[(3) - (4)].NODE)); }
     break;
 
   case 117:
 
 /* Line 1806 of yacc.c  */
 #line 259 "nyelv.y"
-    { (yyval.NODE) = buildNode(INITIALIZER, "{il}", "", (yyvsp[(2) - (3)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(INITIALIZER, "initial1", NULL, (yyvsp[(2) - (3)].NODE), NULL); }
     break;
 
   case 119:
 
 /* Line 1806 of yacc.c  */
 #line 264 "nyelv.y"
-    { (yyval.NODE) = buildNode(INITIALIZER_LIST, "id1 = 1", "", (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
+    { (yyval.NODE) = buildNode(INITIALIZER_LIST, "initial_list1", NULL, (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
     break;
 
   case 120:
 
 /* Line 1806 of yacc.c  */
 #line 265 "nyelv.y"
-    { (yyval.NODE) = buildNode(INITIALIZER_LIST, "il, id1 += 1", "", (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildNode(INITIALIZER_LIST, "initial_list2", NULL, (yyvsp[(1) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 121:
 
 /* Line 1806 of yacc.c  */
 #line 266 "nyelv.y"
-    { (yyval.NODE) = buildFullNode(INITIALIZER_LIST, "il, id1 = 1", "", NULL, NULL, (yyvsp[(1) - (4)].NODE), (yyvsp[(3) - (4)].NODE), (yyvsp[(4) - (4)].NODE)); }
+    { (yyval.NODE) = buildFullNode(INITIALIZER_LIST, "initial_list3", NULL, NULL, NULL, (yyvsp[(1) - (4)].NODE), (yyvsp[(3) - (4)].NODE), (yyvsp[(4) - (4)].NODE)); }
     break;
 
   case 122:
 
 /* Line 1806 of yacc.c  */
 #line 270 "nyelv.y"
-    { (yyval.NODE) = buildNode(DESIGNATION, "id1 =", "", (yyvsp[(1) - (2)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(DESIGNATION, "design1", NULL, (yyvsp[(1) - (2)].NODE), NULL); }
     break;
 
   case 124:
 
 /* Line 1806 of yacc.c  */
 #line 275 "nyelv.y"
-    { (yyval.NODE) = buildNode(DESIGNATOR_LIST, "[1][2]", "", (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
+    { (yyval.NODE) = buildNode(DESIGNATOR_LIST, "desing_list1", NULL, (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
     break;
 
   case 125:
 
 /* Line 1806 of yacc.c  */
 #line 279 "nyelv.y"
-    { (yyval.NODE) = buildNode(DESIGNATOR, "[1]", "", (yyvsp[(2) - (3)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(DESIGNATOR, "design1", NULL, (yyvsp[(2) - (3)].NODE), NULL); }
     break;
 
   case 126:
 
 /* Line 1806 of yacc.c  */
 #line 280 "nyelv.y"
-    { (yyval.NODE) = buildNode(DESIGNATOR, ".a", (yyvsp[(2) - (2)].TEXT), NULL, NULL); }
+    { (yyval.NODE) = buildNode(DESIGNATOR, "design2", (yyvsp[(2) - (2)].TEXT), NULL, NULL); }
     break;
 
   case 133:
 
 /* Line 1806 of yacc.c  */
 #line 293 "nyelv.y"
-    { (yyval.NODE) = buildNode(LABELED_STATEMENT, "case id1 == 1 : id2 = 2", "", (yyvsp[(2) - (4)].NODE), (yyvsp[(4) - (4)].NODE)); }
+    { (yyval.NODE) = buildNode(LABELED_STATEMENT, "lab_sttm1", NULL, (yyvsp[(2) - (4)].NODE), (yyvsp[(4) - (4)].NODE)); }
     break;
 
   case 134:
 
 /* Line 1806 of yacc.c  */
 #line 294 "nyelv.y"
-    { (yyval.NODE) = buildNode(LABELED_STATEMENT, "default: id1 = 1", "", (yyvsp[(3) - (3)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(LABELED_STATEMENT, "lab_sttm2", NULL, (yyvsp[(3) - (3)].NODE), NULL); }
     break;
 
   case 135:
 
 /* Line 1806 of yacc.c  */
 #line 298 "nyelv.y"
-    { (yyval.NODE) = buildNode(COMPOUND_STATEMENT, "{}", "", NULL, NULL); }
+    { (yyval.NODE) = buildNode(COMPOUND_STATEMENT, "compound_st1", NULL, NULL, NULL); }
     break;
 
   case 136:
 
 /* Line 1806 of yacc.c  */
 #line 299 "nyelv.y"
-    { (yyval.NODE) = buildNode(COMPOUND_STATEMENT, "{block_list}", "", (yyvsp[(2) - (3)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(COMPOUND_STATEMENT, "compound_st2", NULL, (yyvsp[(2) - (3)].NODE), NULL); }
     break;
 
   case 138:
 
 /* Line 1806 of yacc.c  */
 #line 304 "nyelv.y"
-    { (yyval.NODE) = buildNode(BLOCK_ITEM_LIST, "item1, item2", "", (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
+    { (yyval.NODE) = buildNode(BLOCK_ITEM_LIST, "bl_item_list1", NULL, (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
     break;
 
   case 139:
@@ -2522,129 +2522,143 @@ yyreduce:
     { (yyval.NODE) = NULL; }
     break;
 
+  case 140:
+
+/* Line 1806 of yacc.c  */
+#line 309 "nyelv.y"
+    { (yyval.NODE) = buildNode(BLOCK_ITEM, "bl_item1", NULL, (yyvsp[(1) - (1)].NODE), NULL); }
+    break;
+
+  case 141:
+
+/* Line 1806 of yacc.c  */
+#line 310 "nyelv.y"
+    { (yyval.NODE) = buildNode(BLOCK_ITEM, "bl_item2", NULL, (yyvsp[(1) - (1)].NODE), NULL); }
+    break;
+
   case 142:
 
 /* Line 1806 of yacc.c  */
 #line 314 "nyelv.y"
-    { (yyval.NODE) = buildNode(EXPRESSION_STATEMENT, ";", "", NULL, NULL); }
+    { (yyval.NODE) = buildNode(EXPRESSION_STATEMENT, "exp_st1", NULL, NULL, NULL); }
     break;
 
   case 143:
 
 /* Line 1806 of yacc.c  */
 #line 315 "nyelv.y"
-    { (yyval.NODE) = buildNode(EXPRESSION_STATEMENT, "exp;", "", (yyvsp[(1) - (2)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(EXPRESSION_STATEMENT, "exp_st2", NULL, (yyvsp[(1) - (2)].NODE), NULL); }
     break;
 
   case 144:
 
 /* Line 1806 of yacc.c  */
 #line 319 "nyelv.y"
-    { (yyval.NODE) = buildNode(SELECTION_STATEMENT, "if", "", (yyvsp[(3) - (5)].NODE), (yyvsp[(5) - (5)].NODE)); }
+    { (yyval.NODE) = buildNode(SELECTION_STATEMENT, "sel_st1", NULL, (yyvsp[(3) - (5)].NODE), (yyvsp[(5) - (5)].NODE)); }
     break;
 
   case 145:
 
 /* Line 1806 of yacc.c  */
 #line 320 "nyelv.y"
-    { (yyval.NODE) = buildFullNode(SELECTION_STATEMENT, "if_with_else", "", NULL, NULL, (yyvsp[(3) - (7)].NODE), (yyvsp[(5) - (7)].NODE), (yyvsp[(7) - (7)].NODE)); }
+    { (yyval.NODE) = buildFullNode(SELECTION_STATEMENT, "sel_st2", NULL, NULL, NULL, (yyvsp[(3) - (7)].NODE), (yyvsp[(5) - (7)].NODE), (yyvsp[(7) - (7)].NODE)); }
     break;
 
   case 146:
 
 /* Line 1806 of yacc.c  */
 #line 321 "nyelv.y"
-    { (yyval.NODE) = buildNode(SELECTION_STATEMENT, "switch", "", (yyvsp[(3) - (5)].NODE), (yyvsp[(5) - (5)].NODE)); }
+    { (yyval.NODE) = buildNode(SELECTION_STATEMENT, "sel_st3", NULL, (yyvsp[(3) - (5)].NODE), (yyvsp[(5) - (5)].NODE)); }
     break;
 
   case 147:
 
 /* Line 1806 of yacc.c  */
 #line 325 "nyelv.y"
-    { (yyval.NODE) = buildNode(ITERATION_STATEMENT, "while", "", (yyvsp[(3) - (5)].NODE), (yyvsp[(5) - (5)].NODE)); }
+    { (yyval.NODE) = buildNode(ITERATION_STATEMENT, "iter_st1", "while(", (yyvsp[(3) - (5)].NODE), (yyvsp[(5) - (5)].NODE)); }
     break;
 
   case 148:
 
 /* Line 1806 of yacc.c  */
 #line 326 "nyelv.y"
-    { (yyval.NODE) = buildNode(ITERATION_STATEMENT, "do_while", "", (yyvsp[(2) - (7)].NODE), (yyvsp[(5) - (7)].NODE)); }
+    { (yyval.NODE) = buildNode(ITERATION_STATEMENT, "iter_st2", "do", (yyvsp[(2) - (7)].NODE), (yyvsp[(5) - (7)].NODE)); }
     break;
 
   case 149:
 
 /* Line 1806 of yacc.c  */
 #line 327 "nyelv.y"
-    { (yyval.NODE) = buildFullNode(ITERATION_STATEMENT, "for", "", (yyvsp[(7) - (7)].NODE), NULL, (yyvsp[(3) - (7)].NODE), (yyvsp[(4) - (7)].NODE), (yyvsp[(5) - (7)].NODE)); }
+    { (yyval.NODE) = buildFullNode(ITERATION_STATEMENT, "iter_st3", "for(", (yyvsp[(7) - (7)].NODE), NULL, (yyvsp[(3) - (7)].NODE), (yyvsp[(4) - (7)].NODE), (yyvsp[(5) - (7)].NODE)); }
     break;
 
   case 150:
 
 /* Line 1806 of yacc.c  */
 #line 331 "nyelv.y"
-    { (yyval.NODE) = buildNode(JUMP_STATEMENT, "continue", (yyvsp[(1) - (2)].TEXT), NULL, NULL); }
+    { (yyval.NODE) = buildNode(JUMP_STATEMENT, "jmp_st1", "continue", NULL, NULL); }
     break;
 
   case 151:
 
 /* Line 1806 of yacc.c  */
 #line 332 "nyelv.y"
-    { (yyval.NODE) = buildNode(JUMP_STATEMENT, "break", (yyvsp[(1) - (2)].TEXT), NULL, NULL); }
+    { (yyval.NODE) = buildNode(JUMP_STATEMENT, "jmp_st2", "break", NULL, NULL); }
     break;
 
   case 152:
 
 /* Line 1806 of yacc.c  */
 #line 333 "nyelv.y"
-    { (yyval.NODE) = buildNode(JUMP_STATEMENT, "return;", (yyvsp[(1) - (2)].TEXT), NULL, NULL); }
+    { (yyval.NODE) = buildNode(JUMP_STATEMENT, "jmp_st3", "return", NULL, NULL); }
     break;
 
   case 153:
 
 /* Line 1806 of yacc.c  */
 #line 334 "nyelv.y"
-    { (yyval.NODE) = buildNode(JUMP_STATEMENT, "return exp;", (yyvsp[(1) - (3)].TEXT), (yyvsp[(2) - (3)].NODE), NULL); }
+    { (yyval.NODE) = buildNode(JUMP_STATEMENT, "jmp_st4", "return", (yyvsp[(2) - (3)].NODE), NULL); }
     break;
 
   case 154:
 
 /* Line 1806 of yacc.c  */
 #line 338 "nyelv.y"
-    { root = (yyval.NODE) = buildNode(TRANSLATION_UNIT, "ext_decl", "", (yyvsp[(1) - (1)].NODE), NULL); }
+    { root = (yyval.NODE) = buildNode(TRANSLATION_UNIT, "tr_un1", NULL, (yyvsp[(1) - (1)].NODE), NULL); }
     break;
 
   case 155:
 
 /* Line 1806 of yacc.c  */
 #line 339 "nyelv.y"
-    { (yyval.NODE) = buildNode(TRANSLATION_UNIT, "tr_unit, ext_decl", "", (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
+    { (yyval.NODE) = buildNode(TRANSLATION_UNIT, "tr_un2", NULL, (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
     break;
 
   case 158:
 
 /* Line 1806 of yacc.c  */
 #line 348 "nyelv.y"
-    { (yyval.NODE) = buildFullNode(FUNCTION_DEFINITION, "function_def", "", (yyvsp[(1) - (4)].NODE), (yyvsp[(2) - (4)].NODE), (yyvsp[(3) - (4)].NODE), (yyvsp[(4) - (4)].NODE), NULL); }
+    { (yyval.NODE) = buildFullNode(FUNCTION_DEFINITION, "func1", NULL, (yyvsp[(1) - (4)].NODE), (yyvsp[(2) - (4)].NODE), (yyvsp[(3) - (4)].NODE), (yyvsp[(4) - (4)].NODE), NULL); }
     break;
 
   case 159:
 
 /* Line 1806 of yacc.c  */
 #line 349 "nyelv.y"
-    { (yyval.NODE) = buildFullNode(FUNCTION_DEFINITION, "short function_def", "", NULL, NULL, (yyvsp[(1) - (3)].NODE), (yyvsp[(2) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
+    { (yyval.NODE) = buildFullNode(FUNCTION_DEFINITION, "func2", NULL, NULL, NULL, (yyvsp[(1) - (3)].NODE), (yyvsp[(2) - (3)].NODE), (yyvsp[(3) - (3)].NODE)); }
     break;
 
   case 161:
 
 /* Line 1806 of yacc.c  */
 #line 354 "nyelv.y"
-    { (yyval.NODE) = buildNode(DECLARATION_LIST, "decl_list, decl", "", (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
+    { (yyval.NODE) = buildNode(DECLARATION_LIST, "decl_list1", NULL, (yyvsp[(1) - (2)].NODE), (yyvsp[(2) - (2)].NODE)); }
     break;
 
 
 
 /* Line 1806 of yacc.c  */
-#line 2648 "nyelv.tab.c"
+#line 2662 "nyelv.tab.c"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires

@@ -5,17 +5,18 @@ int main()
   b += a;
 
   />
-  if_with_else (a > 2) 
-  {
-    a = 7;
-  }
-  else
-  {
-    a = 10;
-  }</
+  a = 15;
+  COMMENTS
+  </
 
   while (a < 20)
   {
     a++;
+	while (b < 30 && c > 40)
+	{
+		d %= 5;
+		s *= 6 * 4 + 5 * 3;
+		k = d * s * 9;
+	}
   }
 }
