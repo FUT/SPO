@@ -16,7 +16,7 @@ a_node* buildFullNode(int enum_type, char* type, char* name, a_node* left, a_nod
 	n->b = b;
 	n->c = c;
 
-	printf("\n[PARSED:]  enum_type: %-5dtype: %-15s\tname: %-0s", enum_type, type, name);
+	printf("\n[PARSED:]  enum_type: %-5dtype: %-15s\tname: %-10s", enum_type, type, name);
 	return n;
 }
 
@@ -27,9 +27,23 @@ a_node* buildNode(int enum_type, char* type, char* name, a_node* left, a_node* r
 
 void analyze(a_node* root)
 {
+	string s = "sdf";
+
 	FILE* out;
 	out = fopen("out.nyelv", "w");
-	
+	printf("\n\n\nANALYZE!\n\n");
+	printNode(root);
 	fclose(out);
+}
+
+void printNode(a_node* node)
+{
+	if(node == NULL) {return;}
+	printf("\n[ANALYZED:]  enum_type: %-5dtype: %-15s\tname: %-10s", node->enum_type, node->type, node->name);
+	printNode(node->left);
+	printNode(node->right);
+	printNode(node->a);
+	printNode(node->b);
+	printNode(node->c);
 }
 

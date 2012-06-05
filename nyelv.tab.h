@@ -91,7 +91,7 @@ typedef union YYSTYPE
 {
 
 /* Line 2068 of yacc.c  */
-#line 19 "nyelv.y"
+#line 20 "nyelv.y"
 
 	a_node* NODE;
 	char* TEXT;
